@@ -95,31 +95,35 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="product-page.html"
-              target="_blank">Search for books</a>
+            <a class="nav-link waves-effect" href="products.php"
+              target="_blank">Book store</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="checkout-page.html" target="_blank">Checkout</a>
+            <a class="nav-link waves-effect" href="checkout.php" target="_blank">Checkout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="contact.php"
+              target="_blank">Contact</a>
           </li>
         </ul>
 
         <!-- Right -->
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a class="nav-link waves-effect">
+            <a href="cart.php" class="nav-link waves-effect">
               <span class="badge red z-depth-1 mr-1"> 1 </span>
               <i class="fas fa-shopping-cart"></i>
               <span class="clearfix d-none d-sm-inline-block"> Cart </span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="login.html" class="nav-link"
+            <a href="login.php" class="nav-link"
               target="_blank">
               </i>Login
             </a>
           </li>
           <li class="nav-item">
-            <a href="registration.html" class="nav-link border border-light rounded waves-effect"
+            <a href="register.php" class="nav-link border border-light rounded waves-effect"
               target="_blank">
               </i>Register
             </a>

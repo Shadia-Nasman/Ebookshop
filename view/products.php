@@ -118,7 +118,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="login.html" class="nav-link"
+            <a href="login.php" class="nav-link"
               target="_blank">
               </i>Login
             </a>
@@ -167,7 +167,7 @@
                 <strong>you will be forever free"</strong>
               </h1>
 
-              <a target="_blank" href="product-page.html" class="btn btn-outline-white btn-lg">Search for books
+              <a target="_blank" href="products.php" class="btn btn-outline-white btn-lg">Search for books
               </a>
             </div>
             <!-- Content -->
@@ -195,7 +195,7 @@
                 <strong>a reader finishes it"</strong>
               </h1>
 
-              <a target="_blank" href="product-page.html" class="btn btn-outline-white btn-lg">Search for books
+              <a target="_blank" href="products.php" class="btn btn-outline-white btn-lg">Search for books
               </a>
             </div>
             <!-- Content -->
@@ -223,7 +223,7 @@
                 <strong>is a lovely place to be"</strong>
               </h1>
 
-              <a target="_blank" href="product-page.html" class="btn btn-outline-white btn-lg">Search for books
+              <a target="_blank" href="products.php.php" class="btn btn-outline-white btn-lg">Search for books
               </a>
             </div>
             <!-- Content -->
