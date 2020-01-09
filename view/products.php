@@ -70,7 +70,7 @@
     <div class="container">
 
       <!-- Brand -->
-      <a class="navbar-brand waves-effect" href="home.php" target="_blank">
+      <a class="navbar-brand waves-effect" href="home.php">
         <strong class="blue-text">MyBook</strong>
       </a>
       <a class="navbar-brand waves-effect" href="home.php"></a>
@@ -98,11 +98,10 @@
             <a class="nav-link waves-effect" href="products.php">Book store</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="checkout-page.php" target="_blank">Checkout</a>
+            <a class="nav-link waves-effect" href="checkout-page.php">Checkout</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="contact.php"
-              target="_blank">Contact</a>
+            <a class="nav-link waves-effect" href="contact.php">Contact</a>
           </li>
         </ul>
       
@@ -122,8 +121,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="register.php" class="nav-link border border-light rounded waves-effect"
-              target="_blank">
+            <a href="register.php" class="nav-link border border-light rounded waves-effect">
               </i>Register
             </a>
           </li>
@@ -165,7 +163,7 @@
                 <strong>you will be forever free"</strong>
               </h1>
 
-              <a target="_blank" href="products.php" class="btn btn-outline-white btn-lg">Search for books
+              <a href="products.php" class="btn btn-outline-white btn-lg">Search for books
               </a>
             </div>
             <!-- Content -->
@@ -193,7 +191,7 @@
                 <strong>a reader finishes it"</strong>
               </h1>
 
-              <a target="_blank" href="products.php" class="btn btn-outline-white btn-lg">Search for books
+              <a href="products.php" class="btn btn-outline-white btn-lg">Search for books
               </a>
             </div>
             <!-- Content -->
@@ -221,7 +219,7 @@
                 <strong>is a lovely place to be"</strong>
               </h1>
 
-              <a target="_blank" href="products.php.php" class="btn btn-outline-white btn-lg">Search for books
+              <a href="products.php.php" class="btn btn-outline-white btn-lg">Search for books
               </a>
             </div>
             <!-- Content -->

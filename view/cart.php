@@ -70,7 +70,7 @@
     <div class="container">
 
       <!-- Brand -->
-      <a class="navbar-brand waves-effect" href="products.php" target="_blank">
+      <a class="navbar-brand waves-effect" href="products.php">
         <strong class="blue-text">MyBook</strong>
       </a>
       <a class="navbar-brand waves-effect" href="home.php"></a>
@@ -98,11 +98,10 @@
             <a class="nav-link waves-effect" href="products.php">Book store</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="checkout.php" target="_blank">Checkout</a>
+            <a class="nav-link waves-effect" href="checkout.php>Checkout</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="contact.php"
-              target="_blank">Contact</a>
+            <a class="nav-link waves-effect" href="contact.php">Contact</a>
           </li>
         </ul>
 
@@ -116,14 +115,12 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="login.php" class="nav-link"
-              target="_blank">
+            <a href="login.php" class="nav-link">
               </i>Login
             </a>
           </li>
           <li class="nav-item">
-            <a href="register.php" class="nav-link border border-light rounded waves-effect"
-              target="_blank">
+            <a href="register.php" class="nav-link border border-light rounded waves-effect">
               </i>Register
             </a>
           </li>
