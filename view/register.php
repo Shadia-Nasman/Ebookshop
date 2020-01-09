@@ -5,7 +5,6 @@ require '\laragon\www\Ebookshop\control\control.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST')datastore($_POST['Username'] , $_POST['email'] ,0 ,0 ,'' , $_POST['password']);
 
-
 ?>
 
 
