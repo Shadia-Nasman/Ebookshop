@@ -95,8 +95,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="products.php"
-              target="_blank">Book store</a>
+            <a class="nav-link waves-effect" href="products.php">Book store</a>
           </li>
           <li class="nav-item">
             <a class="nav-link waves-effect" href="checkout.php" target="_blank">Checkout</a>
@@ -110,7 +109,7 @@
         <!-- Right -->
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a href="cart.php" class="nav-link waves-effect">
+          <a class="nav-link waves-effect" href="cart.php">
               <span class="badge red z-depth-1 mr-1"> 1 </span>
               <i class="fas fa-shopping-cart"></i>
               <span class="clearfix d-none d-sm-inline-block"> Cart </span>
