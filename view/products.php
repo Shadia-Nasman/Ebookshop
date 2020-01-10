@@ -70,10 +70,10 @@
     <div class="container">
 
       <!-- Brand -->
-      <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+      <a class="navbar-brand waves-effect" href="home.php">
         <strong class="blue-text">MyBook</strong>
       </a>
-      <a class="navbar-brand waves-effect" href="home.html"></a>
+      <a class="navbar-brand waves-effect" href="home.php"></a>
         <img src="img/mybook logo.png"
         alt="">
       </a>
@@ -95,32 +95,33 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="product-page.html"
-              target="_blank">Search for books</a>
+            <a class="nav-link waves-effect" href="products.php">Book store</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="checkout-page.html" target="_blank">Checkout</a>
+            <a class="nav-link waves-effect" href="checkout-page.php">Checkout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="contact.php">Contact</a>
           </li>
         </ul>
+      
 
         <!-- Right -->
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a class="nav-link waves-effect">
+            <a class="nav-link waves-effect" href="cart.php">
               <span class="badge red z-depth-1 mr-1"> 1 </span>
               <i class="fas fa-shopping-cart"></i>
               <span class="clearfix d-none d-sm-inline-block"> Cart </span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="login.html" class="nav-link"
-              target="_blank">
+            <a href="login.php" class="nav-link">
               </i>Login
             </a>
           </li>
           <li class="nav-item">
-            <a href="registration.html" class="nav-link border border-light rounded waves-effect"
-              target="_blank">
+            <a href="register.php" class="nav-link border border-light rounded waves-effect">
               </i>Register
             </a>
           </li>
@@ -162,7 +163,7 @@
                 <strong>you will be forever free"</strong>
               </h1>
 
-              <a target="_blank" href="product-page.html" class="btn btn-outline-white btn-lg">Search for books
+              <a href="products.php" class="btn btn-outline-white btn-lg">Search for books
               </a>
             </div>
             <!-- Content -->
@@ -190,7 +191,7 @@
                 <strong>a reader finishes it"</strong>
               </h1>
 
-              <a target="_blank" href="product-page.html" class="btn btn-outline-white btn-lg">Search for books
+              <a href="products.php" class="btn btn-outline-white btn-lg">Search for books
               </a>
             </div>
             <!-- Content -->
@@ -218,7 +219,7 @@
                 <strong>is a lovely place to be"</strong>
               </h1>
 
-              <a target="_blank" href="product-page.html" class="btn btn-outline-white btn-lg">Search for books
+              <a href="products.php.php" class="btn btn-outline-white btn-lg">Search for books
               </a>
             </div>
             <!-- Content -->
@@ -689,24 +690,25 @@
     <hr class="my-4">
 
     <!-- Social icons -->
-    <div class="pb-4">
-      <a href="https://www.facebook.com/mdbootstrap" target="_blank">
-        <i class="fab fa-facebook-f mr-3"></i>
-      </a>
 
-      <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
-        <i class="fab fa-youtube mr-3"></i>
-      </a>
+      <div class="pb-4">
+        <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+        <img src="img/facebook.png" alt="">
+        </a>
 
-      <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
-        <i class="fab fa-github mr-3"></i>
-      </a>
-    </div>
+        <a href="https://www.youtube.com/watch?v=xqMozc4K4pg" target="_blank">
+        <img src="img/youtube.png" alt="">
+        </a>
+        
+        <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
+        <img src="img/github.png" alt="">
+        </a>
+      </div>
     <!-- Social icons -->
 
     <!--Copyright-->
     <div class="footer-copyright py-3">
-      © 2020 Copyright Becode Team
+      © 2020 Copyright:<strong> Becode Team</strong>
     </div>
     <!--/.Copyright-->
 
