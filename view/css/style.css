@@ -21,10 +21,3 @@ body,
 /* Footer color for sake of consistency with Navbar */
 .page-footer {
   background-color: #929FBA; }
-
-  .navbar-brand {
-    position: relative;
-    width: 50%;
-    left: 50%;
-    background-size: contain;
-}
