@@ -5,7 +5,7 @@
         $dbhost    = "localhost";
         $dbuser    = "root";
         $dbpass    = "";
-        $db        = "ebooks";
+        $db        = "ebook";
         
         // Try to understand what happens here 
         $pdo = new PDO('mysql:host='. $dbhost .';dbname='. $db, $dbuser, $dbpass);
