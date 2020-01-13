@@ -2,10 +2,10 @@
 
     function openConnection() {
         // Try to figure out what these should be for you
-        $dbhost    = "localhost";
-        $dbuser    = "root";
-        $dbpass    = "";
-        $db        = "ebook";
+        $dbhost    = "192.168.139.125";
+        $dbuser    = "ebook";
+        $dbpass    = "becode2020";
+        $db        = "ebookshop";
         
         // Try to understand what happens here 
         $pdo = new PDO('mysql:host='. $dbhost .';dbname='. $db, $dbuser, $dbpass);

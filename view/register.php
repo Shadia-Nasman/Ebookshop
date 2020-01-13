@@ -1,9 +1,9 @@
 <?php
 
-// require '\laragon\www\Ebookshop\model\connection.php';
-// require '\laragon\www\Ebookshop\control\control.php';
+    require 'C:\laragon\www\Ebookshop\model\connection.php';
+    require 'C:\laragon\www\Ebookshop\control\control.php';
 
-if($_SERVER['REQUEST_METHOD'] == 'POST')datastore($_POST['Username'] , $_POST['email'] ,0 ,0 ,'' , $_POST['password']);
+if($_SERVER['REQUEST_METHOD'] == 'POST')datastore($_POST['email'],'','',$_POST['username'],$_POST['password'],'0','','','');
 
 ?>
 
@@ -31,9 +31,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')datastore($_POST['Username'] , $_POST['e
 <body class="grey lighten-3">
 
     <!-- header -->
-  <?php
-  include 'header.php';
-  ?>
+    <?php
+    include 'header.php';
+    ?>
 <!-- /header -->
     <!--Main layout-->
     <main class="mt-5 pt-4">
@@ -64,7 +64,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')datastore($_POST['Username'] , $_POST['e
                                 <!--Grid row-->
                                 <!--username-->
                                 <div class="md-form ">
-                                    <input type="text" id="UserName" name="Username" class="form-control"
+                                    <input type="text" id="userName" name="username" class="form-control"
                                         placeholder="Username">
 
                                 </div>
