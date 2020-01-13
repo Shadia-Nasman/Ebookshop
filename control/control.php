@@ -1,27 +1,36 @@
 <?php
 
 
-function datastore( $username, $email, $gsm ,$cardno, $addres, $password){
-          
-          $db = openConnection();
+
+  function datastore($email,$firstname,$lastname,$username,$password,$gsm ,$cardno,$nameoncard,$address){
+    $db = openConnection();
           $select = $db->query("INSERT INTO
           user (
-            username,
             email,
+            firstname,
+            lastname,
+            username,
+            password,
             gsm,
             cardno,
-            address,
-            password 
+            nameoncard,
+            address
+          
           )
+
   VALUES 
-    (
-        '$username',
+
+    (  
         '$email',
+        '$firstname',
+        '$lastname',
+        '$username',
+        '$password',
         '$gsm',
         '$cardno',
-        '$addres',
-        '$password'
+        '$nameoncard',
+        '$address'      
       )
-  ");
+  "  );
     }
 

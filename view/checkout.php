@@ -37,13 +37,18 @@
 
 <!-- header -->
 <?php
-  include 'header.php';
+
+  include '\laragon\www\Ebookshop\view\checkoutform.php';
+  require '\laragon\www\Ebookshop\model\connection.php';
+  require '\laragon\www\Ebookshop\control\control.php';
+
+  if($_SERVER['REQUEST_METHOD'] == 'POST')datastore($_POST['firstname'] ,$_POST['lastname'] ,'0', $_POST['Username'] , $_POST['email'] ,0 , $_POST['cardno'],$_POST['address'],$_POST['password'],$_POST['cvv']);
   ?>
 <!-- /header -->
 
 
   <!--Main layout-->
-  <main class="mt-5 pt-4">
+  <main class="mt-5 pt-4">  
     <div class="container wow fadeIn">
 
       <!-- Heading -->
@@ -69,7 +74,14 @@
 
                   <!--firstName-->
                   <div class="md-form ">
-                    <input type="text" id="firstName" class="form-control">
+                    <input type="text" id="firstName" name = "firstname" 
+                    value="<?php if (isset($_SESSION["firstname"])){
+                                                            echo $_SESSION["firstname"];
+                                                        } else{
+                                                            echo"";
+                                                        }
+                                                ?>"  class="form-control">
+                                          <span class="error"> <?php echo $firstnamerr;?></span>
                     <label for="firstName" class="">First name</label>
                   </div>
 
@@ -81,7 +93,15 @@
 
                   <!--lastName-->
                   <div class="md-form">
-                    <input type="text" id="lastName" class="form-control">
+                    <input type="text" id="lastName" name = "lastname" 
+                    value="<?php if (isset($_SESSION["lastname"])){
+                                                            echo $_SESSION["lastname"];
+                                                        } else{
+                                                            echo"";
+                                                        }
+                                                ?>" 
+                    class="form-control">
+                    <span class="error"> <?php echo $lastnamerr;?></span>
                     <label for="lastName" class="">Last name</label>
                   </div>
 
@@ -101,19 +121,19 @@
 
               <!--email-->
               <div class="md-form mb-5">
-                <input type="text" id="email" class="form-control" placeholder="youremail@example.com">
+                <input type="text" id="email" name = "eamil" class="form-control" placeholder="youremail@example.com">
                 <label for="email" class="">Email (optional)</label>
               </div>
 
               <!--address-->
               <div class="md-form mb-5">
-                <input type="text" id="address" class="form-control" placeholder="1234 Main St">
+                <input type="text" id="address" name = "address" class="form-control" placeholder="1234 Main St">
                 <label for="address" class="">Address</label>
               </div>
 
               <!--address-2-->
               <div class="md-form mb-5">
-                <input type="text" id="address-2" class="form-control" placeholder="Apartment or suite">
+                <input type="text" id="address-2" name = "address2" class="form-control" placeholder="Apartment or suite">
                 <label for="address-2" class="">Address 2 (optional)</label>
               </div>
 
@@ -124,7 +144,7 @@
                 <div class="col-lg-4 col-md-12 mb-4">
 
                   <label for="country">Country</label>
-                  <select class="custom-select d-block w-100" id="country" required>
+                  <select class="custom-select d-block w-100" id="country" name = "country" required>
                     <option value="">Choose...</option>
                     <option>United States</option>
                   </select>
@@ -139,7 +159,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
 
                   <label for="state">State</label>
-                  <select class="custom-select d-block w-100" id="state" required>
+                  <select class="custom-select d-block w-100" id="state" name = "state" required>
                     <option value="">Choose...</option>
                     <option>California</option>
                   </select>
@@ -154,7 +174,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
 
                   <label for="zip">Zip</label>
-                  <input type="text" class="form-control" id="zip" placeholder="" required>
+                  <input type="text" class="form-control" id="zip" name = "zip" placeholder="" required>
                   <div class="invalid-feedback">
                     Zip code required.
                   </div>
@@ -191,7 +211,7 @@
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="cc-name">Name on card</label>
-                  <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                  <input type="text" class="form-control" id="cc-name" name = "cardname" placeholder="" required>
                   <small class="text-muted">Full name as displayed on card</small>
                   <div class="invalid-feedback">
                     Name on card is required
@@ -199,7 +219,7 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="cc-number">Credit card number</label>
-                  <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                  <input type="text" class="form-control" id="cc-number" name = "cardno" placeholder="" required>
                   <div class="invalid-feedback">
                     Credit card number is required
                   </div>
@@ -215,7 +235,7 @@
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="cc-expiration">CVV</label>
-                  <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                  <input type="text" class="form-control" id="cc-cvv" name = "cvv" placeholder="" required>
                   <div class="invalid-feedback">
                     Security code required
                   </div>
@@ -277,7 +297,6 @@
             </li>
           </ul>
           <!-- Cart -->
-
           <!-- Promo code -->
           <form class="card p-2">
             <div class="input-group">
@@ -288,7 +307,6 @@
             </div>
           </form>
           <!-- Promo code -->
-
         </div>
         <!--Grid column-->
 
