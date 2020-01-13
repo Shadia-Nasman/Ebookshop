@@ -123,7 +123,7 @@
                 <!--Grid column-->
                 <div class="col-lg-4 col-md-12 mb-4">
 
-                  
+
 
                 </div>
                 <!--Grid column-->
@@ -187,7 +187,7 @@
                   </div>
                 </div>
               </div>
-
+<button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
             </form>
 
           </div>
