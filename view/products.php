@@ -65,72 +65,11 @@
 
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
-    <div class="container">
-
-      <!-- Brand -->
-      <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-        <strong class="blue-text">MyBook</strong>
-      </a>
-      <a class="navbar-brand waves-effect" href="home.html"></a>
-        <img src="img/mybook logo.png"
-        alt="">
-      </a>
-
-      <!-- Collapse -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Links -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-        <!-- Left -->
-        <ul class="navbar-nav mr-auto ml-3">
-          <li class="nav-item active">
-            <a class="nav-link waves-effect" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="product-page.html"
-              target="_blank">Search for books</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="checkout-page.html" target="_blank">Checkout</a>
-          </li>
-        </ul>
-
-        <!-- Right -->
-        <ul class="navbar-nav nav-flex-icons">
-          <li class="nav-item">
-            <a class="nav-link waves-effect">
-              <span class="badge red z-depth-1 mr-1"> 1 </span>
-              <i class="fas fa-shopping-cart"></i>
-              <span class="clearfix d-none d-sm-inline-block"> Cart </span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="login.html" class="nav-link"
-              target="_blank">
-              </i>Login
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="registration.html" class="nav-link border border-light rounded waves-effect"
-              target="_blank">
-              </i>Register
-            </a>
-          </li>
-        </ul>
-
-      </div>
-
-    </div>
-  </nav>
-  <!-- Navbar -->
+ <!-- header -->
+ <?php
+  include 'header.php';
+  ?>
+<!-- /header -->
 
   <!--Carousel Wrapper-->
   <div id="carousel-example-1z" class="carousel slide carousel-fade pt-4" data-ride="carousel">
@@ -162,7 +101,7 @@
                 <strong>you will be forever free"</strong>
               </h1>
 
-              <a target="_blank" href="product-page.html" class="btn btn-outline-white btn-lg">Search for books
+              <a href="products.php" class="btn btn-outline-white btn-lg">Search for books
               </a>
             </div>
             <!-- Content -->
@@ -190,7 +129,7 @@
                 <strong>a reader finishes it"</strong>
               </h1>
 
-              <a target="_blank" href="product-page.html" class="btn btn-outline-white btn-lg">Search for books
+              <a href="products.php" class="btn btn-outline-white btn-lg">Search for books
               </a>
             </div>
             <!-- Content -->
@@ -218,7 +157,7 @@
                 <strong>is a lovely place to be"</strong>
               </h1>
 
-              <a target="_blank" href="product-page.html" class="btn btn-outline-white btn-lg">Search for books
+              <a href="products.php.php" class="btn btn-outline-white btn-lg">Search for books
               </a>
             </div>
             <!-- Content -->
@@ -682,36 +621,9 @@
     </div>
   </main>
   <!--Main layout-->
-
-  <!--Footer-->
-  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
-
-    <hr class="my-4">
-
-    <!-- Social icons -->
-    <div class="pb-4">
-      <a href="https://www.facebook.com/mdbootstrap" target="_blank">
-        <i class="fab fa-facebook-f mr-3"></i>
-      </a>
-
-      <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
-        <i class="fab fa-youtube mr-3"></i>
-      </a>
-
-      <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
-        <i class="fab fa-github mr-3"></i>
-      </a>
-    </div>
-    <!-- Social icons -->
-
-    <!--Copyright-->
-    <div class="footer-copyright py-3">
-      © 2020 Copyright Becode Team
-    </div>
-    <!--/.Copyright-->
-
-  </footer>
-  <!--/.Footer-->
+<!--Footer-->
+<?php include 'footer.php';?>
+  <!--/Footer-->
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
