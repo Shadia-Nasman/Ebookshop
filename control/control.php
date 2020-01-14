@@ -42,4 +42,13 @@
     $db = openConnection();
     $select = $db->query("SELECT COUNT(*) from user where email = '$email' and password = '$password'");
   }
-      echo "$select";
+   
+      if ($select > 0) 
+      {
+        echo "Found";
+      } 
+     else 
+    {
+        echo "Not found";
+    }
+ 
