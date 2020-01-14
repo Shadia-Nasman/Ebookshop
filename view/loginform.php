@@ -3,33 +3,41 @@ session_start();
 
 $email = $password = "";
 $emailerr = $passworderr = "";
+$_SESSION["emailerr"] = "";
+$_SESSION["passworderr"] = "";
+
+
 
 /*email*/
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-
+if(isset($_POST["submit"])){
+    
     if(empty($_POST["email"])){
-        $emailerr = '<div class="alert alert-danger" role="alert">*required</div>';
+        $emailerr = '<div class="alert alert-danger" role="alert">*Email is required</div>';
+        $_SESSION["emailerr"] = $emailerr;
+       
     } else{
-        $_SESSION["email"] = test_input($_POST["email"]);
+        $_SESSION["email"] = $_POST["email"];
+       ;
     }
-    $email = test_input($_POST["email"]);
+  /*email validate*/
+        $email = $_POST["email"];
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
             $emailerr = '<div class="alert alert-danger" role="alert">*required</div>';
         }
-/*end email*/
 
-        if(empty($_POST["password"])){
-        $passworderr = '<div class="alert alert-danger" role="alert">*required</div>';
-        } else{
-        $_SESSION["password"] = test_input($_POST["password"]);
-        }
-    }
-    function test_input($data){
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
+  /* password*/
+    if(empty($_POST["password"])){
+        $passworderr = '<div class="alert alert-danger" role="alert">*Password is required</div>';
+        $_SESSION["passworderr"] = $passworderr;
+    } 
+    
+}  
+if(empty($_SESSION["emailerr"]) && empty($_SESSION["passworderr"] ) && isset($_POST["email"])){
+    setcookie("email", $email);
 
-        return $data;
-    }
+    header('location: products.php');
+
+}
+
 
 ?>
