@@ -1,12 +1,13 @@
 <?php
 
 require 'loginform.php';
- require '\laragon\www\Ebookshop\control\control.php';
- require '\laragon\www\Ebookshop\model\connection.php';
+// require '\Ebookshop\control\control.php';
+// require \Ebookshop\model\connection.php';
 
-if($_SERVER['REQUEST_METHOD'] == 'POST')datastore($_POST['email'],'','','',$_POST['password'],0 ,0 ,'','');
+//if($_SERVER['REQUEST_METHOD'] == 'POST')datastore(0, $_POST['email'] ,0 ,0 ,'' , $_POST['password']);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,12 +28,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')datastore($_POST['email'],'','','',$_POS
     <link href="css/style.min.css" rel="stylesheet">
 </head>
 
+
 <body class="grey lighten-3">
-<!-- header -->
-  <?php
+    <!-- header -->
+    <?php
   include 'header.php';
   ?>
-<!-- /header -->
+    <!-- /header -->
     <!--Main layout-->
     <main class="mt-5 pt-4">
         <div class="container wow fadeIn ">
@@ -47,7 +49,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')datastore($_POST['email'],'','','',$_POS
                 <div class="col-md-6 mb-4  ">
 
                     <!--Card-->
-                    <div class="card text-center">
+                    <div class="card">
 
                         <!--Card content-->
                         <div class="card-body ">
@@ -65,37 +67,36 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')datastore($_POST['email'],'','','',$_POS
                                 <!--email-->
                                 <div class="md-form">
                                     <input type="text" id="email" name="email" placeholder="youremail@example.com"
-                                        value="<?php if (isset($_SESSION["email"])){
-                                                            echo $_SESSION["email"];
-                                                        } else{
-                                                            echo"";
-                                                        }
-                                                ?>" class="form-control">
-                                    <span class="error"> <?php echo $emailerr;?></span>
+                                        class="form-control">
+                                    <span class="error">
+                                        <?php if(!empty($_SESSION["emailerr"])) {echo $_SESSION["emailerr"];}?></span>
+
                                 </div>
 
                                 <!--password-->
                                 <div class="md-form mt-3">
-                                    <input type="text" id="password" name="password" placeholder="Password" value="<?php
-                                        if (isset($_SESSION["password"])){
-                                                echo $_SESSION["password"];
-                                            } else {
-                                                echo "";
-                                            }
-                                        ?>" class="form-control">
-                                    <span class="error"> <?php echo $passworderr;?></span>
+                                    <input type="text" id="password" name="password" placeholder="Password"
+                                        class="form-control">
+                                    <span class="error">
+                                        <?php if( !empty($_SESSION["passworderr"])) {echo $_SESSION["passworderr"];}?></span>
+                                </div><br>
+                                <div class="forgot">
+                                    <a href="#">forgot password</a>
                                 </div>
-
                                 <div class="form-check pl-0 mt-4 ml-4 mb-2">
                                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck266"
                                         required>
-                                    <label class="form-check-label" for="invalidCheck266">Agree to terms and
-                                        conditions</label>
-                                    <div class="invalid-feedback">You shall not pass!</div>
+
+
+                                    <div class="terms">
+                                        <label class="form-check-label" for="invalidCheck266" id="terms">Agree to
+                                            <a href="terms.html">terms and conditions</a>
+                                        </label>
+                                    </div>
                                 </div>
 
-
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">login</button>
+                                <button class=" btn btn-primary btn-lg btn-block" value="submit" type="submit"
+                                    name="submit" id="submit">login</button>
 
                             </form>
                         </div>
@@ -112,9 +113,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')datastore($_POST['email'],'','','',$_POS
     </main>
     <!--Main layout-->
 
-<!--Footer-->
-<?php include 'footer.php';?>
-  <!--/Footer-->
+    <!--Footer-->
+    <?php include 'footer.php';?>
+    <!--/Footer-->
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
@@ -126,8 +127,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')datastore($_POST['email'],'','','',$_POS
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Initializations -->
+    <script type="text/javascript" src="js/app.js">
+    </script>
     <script type="text/javascript">
-    // Animations initialization
+    //Animations initialization
     new WOW().init();
     </script>
 </body>
