@@ -1,8 +1,5 @@
-<?php require 'Ebookshop/model/connection.php' ;
-
-$db = openConnection();
-$select = 'SELECT * FROM product'; 
-$data=$db->query($select);
+<?php require '../model/connection.php' ;
+require '../control/control.php';
 
 ?> 
 <!DOCTYPE html>
@@ -236,17 +233,20 @@ $data=$db->query($select);
       <section class="text-center mb-4">
 
         <!--Grid row-->
-        <div class="row wow fadeIn">
-        <?php foreach ($data as $row):?>
+        <div  class="row wow fadeIn">
+        
+        <?php 
+        $rows = displayProducts();
+        foreach ($rows as $row):?>
           <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4">
+          <div  class="col-lg-3 col-md-6 mb-4">
 
             <!--Card-->
-            <div class="card">
+            <div  class="card" >
 
               <!--Card image-->
               <div class="view overlay">
-                <img src="<?php echo $row['photo']; ?>" class="card-img-top"
+                <img height="300" width="150" src="<?php echo $row['photo']; ?>" class="card-img-top" 
                   alt="">
                 <a>
                   <div class="mask rgba-white-slight"></div>
@@ -258,12 +258,12 @@ $data=$db->query($select);
               <div class="card-body text-center">
                 <!--Category & Title-->
                 <a href="" class="grey-text">
-                  <h5><?php echo $row['title']?></h5>
+                  <h5 name="booktitle"><?php echo $row['title']?></h5>
                 </a>
                 <h5>
                   <strong>
-                    <a href="" class="dark-grey-text"><?php echo "Author: " .$row['author']?>
-                      <span class="badge badge-pill danger-color"><?php echo "category: ".$row['type']?></span>
+                    <a href="" class="dark-grey-text"><?php echo "Written by: " .$row['author']?>
+                      <span class="badge badge-pill danger-color"><?php echo $row['type']." book "?></span>
                     </a>
                   </strong>
                 </h5>
@@ -272,6 +272,11 @@ $data=$db->query($select);
                   <strong><?php echo $row['price']?>€</strong>
                 </h4>
 
+                <form method="post" action=""> 
+                <input type="submit" name="addbtn"
+                class="button" value="show details"  /> 
+                </form> 
+ </head> 
               </div>
               <!--Card content-->
 
