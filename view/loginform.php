@@ -1,5 +1,5 @@
 <?php
-session_start();
+//  session_start();  
 
 $email = $password = "";
 $emailerr = $passworderr = "";
@@ -34,8 +34,7 @@ if(isset($_POST["submit"])){
 }  
 if(empty($_SESSION["emailerr"]) && empty($_SESSION["passworderr"] ) && isset($_POST["email"])){
     setcookie("email", $email);
-
-    header('location: products.php');
+     header('location: products.php');
 
 }
 
