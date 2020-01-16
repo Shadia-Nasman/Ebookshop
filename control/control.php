@@ -78,3 +78,14 @@
           )
       "  );
         }
+
+ <!--  products.php functions -->
+
+<?php function displayProducts(){
+  $db = openConnection();
+$select = 'SELECT * FROM product'; 
+$data=$db->query($select);
+return $data;
+}
+    // products.php functions
+
