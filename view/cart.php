@@ -65,8 +65,8 @@
 
 <body>
 
- <!-- header -->
- <?php
+  <!-- header -->
+  <?php
   include 'header.php';
   ?>
 <!-- /header -->
@@ -148,7 +148,7 @@
         
           <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold btn-block text-center">Order summary</div>
           <div class="p-4">
-           
+
             <ul class="list-unstyled mb-4">
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
                 <h5 class="font-weight-bold">€400.00</h5>
@@ -160,7 +160,7 @@
 </div>
 
 
- <!--Footer-->
+  <!--Footer-->
 <?php include 'footer.php';?>
   <!-- SCRIPTS -->
   <!-- JQuery -->

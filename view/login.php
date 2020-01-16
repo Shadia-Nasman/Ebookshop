@@ -1,11 +1,12 @@
 <?php
-
-// session_start();
-   require '\laragon\www\Ebookshop\view\loginform.php';  
+session_start();
+    require '\laragon\www\Ebookshop\view\loginform.php';   
     require '\laragon\www\Ebookshop\model\connection.php';
     require '\laragon\www\Ebookshop\control\control.php';
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST')datastore1($_POST['email'] ,0 ,0 ,'' , $_POST['password']);
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        datastore1($_POST['email'],$_POST['password']);}
+
 ?> 
 
 <!DOCTYPE html>
@@ -32,7 +33,7 @@
 <body class="grey lighten-3">
     <!-- header -->
     <?php
-    include 'header.php';
+  /*   include 'header.php'; */
     ?>
     <!-- /header -->
     <!--Main layout-->

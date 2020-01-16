@@ -1,3 +1,18 @@
+
+<?php
+session_start();
+
+
+    require '\laragon\www\Ebookshop\model\connection.php';
+    require '\laragon\www\Ebookshop\control\control.php';
+  
+  
+
+if($_SERVER['REQUEST_METHOD'] == 'POST')check('0','',$_POST['email'],'','',$_POST['shippingaddress'],'0');    
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +52,7 @@
 
 <!-- header -->
 <?php
-  include 'header.php';
+  /* include 'header.php'; */
   ?>
 <!-- /header -->
 
@@ -57,9 +72,8 @@
 
           <!--Card-->
           <div class="card">
-
             <!--Card content-->
-            <form class="card-body">
+            <form class="card-body" method = "POST">
 
               <!--Grid row-->
               <div class="row">
@@ -69,8 +83,10 @@
 
                   <!--firstName-->
                   <div class="md-form ">
-                    <input type="text" id="firstName" class="form-control">
-                    <label for="firstName" class="">First name</label>
+                    <input type="text" id="firstname" name = "firstname" class="form-control">
+                    <label for="firstname" class="">First name</label>
+                    <span class="error">
+                      <?php if(!empty($_SESSION["firstnamerr"])) {echo $_SESSION["firstnamerr"];}?></span>
                   </div>
 
                 </div>
@@ -81,8 +97,9 @@
 
                   <!--lastName-->
                   <div class="md-form">
-                    <input type="text" id="lastName" class="form-control">
-                    <label for="lastName" class="">Last name</label>
+                    <input type="text" id="lastname" name ="lastname" class="form-control">
+                    <label for="lastname" class="">Last name</label>
+                    <?php if(!empty($_SESSION["lastnamerr"])) {echo $_SESSION["lastnamerr"];}?></span>
                   </div>
 
                 </div>
@@ -96,27 +113,25 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1">@</span>
                 </div>
-                <input type="text" class="form-control py-0" placeholder="Username" aria-describedby="basic-addon1">
+                <input type="text" id = "username" name ="username" class="form-control py-0" placeholder="Username" aria-describedby="basic-addon1">
+                <?php if(!empty($_SESSION["usernamerr"])) {echo $_SESSION["lusernamerr"];}?></span>
               </div>
 
               <!--email-->
               <div class="md-form mb-5">
-                <input type="text" id="email" class="form-control" placeholder="youremail@example.com">
+                <input type="text" id="email" name ="email" class="form-control" placeholder="youremail@example.com">
                 <label for="email" class="">Email (optional)</label>
+                <?php if(!empty($_SESSION["emailerr"])) {echo $_SESSION["emailerr"];}?></span>
               </div>
 
               <!--address-->
               <div class="md-form mb-5">
-                <input type="text" id="address" class="form-control" placeholder="1234 Main St">
-                <label for="address" class="">Address</label>
+                <input type="text" id="shippingaddress" name = "shippingaddress" class="form-control" placeholder="1234 Main St">
+                <label for="shippingaddress" class="">Shipping Address</label>
+                <?php if(!empty($_SESSION["shippingaddresserr"])) {echo $_SESSION["shippingaddresserr"];}?></span>
               </div>
 
-              <!--address-2-->
-              <div class="md-form mb-5">
-                <input type="text" id="address-2" class="form-control" placeholder="Apartment or suite">
-                <label for="address-2" class="">Address 2 (optional)</label>
-              </div>
-
+        
               <!--Grid row-->
               <div class="row">
 
@@ -147,19 +162,6 @@
               </div>
               <!--Grid row-->
 
-              <hr>
-
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="same-address">
-                <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-              </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="save-info">
-                <label class="custom-control-label" for="save-info">Save this information for next time</label>
-              </div>
-
-              <hr>
-
               <div class="d-block my-3">
                 <div class="custom-control custom-radio">
                   <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
@@ -173,7 +175,7 @@
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="cc-name">Name on card</label>
-                  <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                  <input type="text" class="form-control" id="nameoncard" name = "nameoncard" placeholder="" required>
                   <small class="text-muted">Full name as displayed on card</small>
                   <div class="invalid-feedback">
                     Name on card is required
@@ -187,7 +189,7 @@
                   </div>
                 </div>
               </div>
-<button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+<button class="btn btn-primary btn-lg btn-block" type="submit">Continue to pay</button>
             </form>
 
           </div>

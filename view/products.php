@@ -1,9 +1,9 @@
-<?php require 'Ebookshop/model/connection.php' ;
+<?php require '\laragon\www\Ebookshop/model/connection.php' ;
 
-$db = openConnection();
+ $db = openConnection();
 $select = 'SELECT * FROM product'; 
 $data=$db->query($select);
-
+ 
 ?> 
 <!DOCTYPE html>
 <html lang="en">
