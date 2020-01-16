@@ -1,0 +1,16 @@
+body{
+    background: rgb(151, 151, 165);
+}
+
+.container{
+    margin: auto;
+    padding: 150px 2px 2px 5px;
+}
+
+h1{
+    margin: 0em;
+    font-size: 30px;
+    text-shadow: rgb(219, 55, 88);
+
+}
+

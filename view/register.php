@@ -1,13 +1,6 @@
 
 <?phpsession_start();
 header('location:login.php');
-?>
-<?php
-ini_set('display_errors', "1");
-ini_set('display_startup_errors', "1");
-error_reporting(E_ALL);
-
-
     require '\laragon\www\Ebookshop\view\registratieform.php';
     require '\laragon\www\Ebookshop\model\connection.php';
     require '\laragon\www\Ebookshop\control\control.php';

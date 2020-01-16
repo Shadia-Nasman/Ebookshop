@@ -7,9 +7,7 @@ session_start();
     require '\laragon\www\Ebookshop\control\control.php';
   
   
-
-if($_SERVER['REQUEST_METHOD'] == 'POST')check('0','',$_POST['email'],'','',$_POST['shippingaddress'],'0');    
-
+if($_SERVER['REQUEST_METHOD'] == 'POST')datastore($_POST['email'],'','' ,'','','',$_POST['cardno'],$_POST['nameoncard'],$_POST['address']);    
 ?>
 
 
@@ -81,41 +79,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')check('0','',$_POST['email'],'','',$_POS
                 <!--Grid column-->
                 <div class="col-md-6 mb-2">
 
-                  <!--firstName-->
-                  <div class="md-form ">
-                    <input type="text" id="firstname" name = "firstname" class="form-control">
-                    <label for="firstname" class="">First name</label>
-                    <span class="error">
-                      <?php if(!empty($_SESSION["firstnamerr"])) {echo $_SESSION["firstnamerr"];}?></span>
-                  </div>
 
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-md-6 mb-2">
-
-                  <!--lastName-->
-                  <div class="md-form">
-                    <input type="text" id="lastname" name ="lastname" class="form-control">
-                    <label for="lastname" class="">Last name</label>
-                    <?php if(!empty($_SESSION["lastnamerr"])) {echo $_SESSION["lastnamerr"];}?></span>
-                  </div>
-
-                </div>
-                <!--Grid column-->
-
-              </div>
-              <!--Grid row-->
-
-              <!--Username-->
-              <div class="md-form input-group pl-0 mb-5">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">@</span>
-                </div>
-                <input type="text" id = "username" name ="username" class="form-control py-0" placeholder="Username" aria-describedby="basic-addon1">
-                <?php if(!empty($_SESSION["usernamerr"])) {echo $_SESSION["lusernamerr"];}?></span>
-              </div>
 
               <!--email-->
               <div class="md-form mb-5">
@@ -123,44 +87,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')check('0','',$_POST['email'],'','',$_POS
                 <label for="email" class="">Email (optional)</label>
                 <?php if(!empty($_SESSION["emailerr"])) {echo $_SESSION["emailerr"];}?></span>
               </div>
-
+              
               <!--address-->
               <div class="md-form mb-5">
-                <input type="text" id="shippingaddress" name = "shippingaddress" class="form-control" placeholder="1234 Main St">
-                <label for="shippingaddress" class="">Shipping Address</label>
-                <?php if(!empty($_SESSION["shippingaddresserr"])) {echo $_SESSION["shippingaddresserr"];}?></span>
+                <input type="text" id="address"
+                  name = "address" class="form-control" placeholder="1234 Main St">
+                <label for="address" class=""> Address</label>
+                <?php if(!empty($_SESSION["addresserr"])) {echo $_SESSION["addresserr"];}?></span>
               </div>
 
-        
-              <!--Grid row-->
-              <div class="row">
-
-                <!--Grid column-->
-                <div class="col-lg-4 col-md-12 mb-4">
-
-
-
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-4 col-md-6 mb-4">
-
-
-
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-4 col-md-6 mb-4">
-
-
-
-                </div>
-                <!--Grid column-->
-
-              </div>
-              <!--Grid row-->
 
               <div class="d-block my-3">
                 <div class="custom-control custom-radio">
@@ -172,6 +107,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')check('0','',$_POST['email'],'','',$_POS
                   <label class="custom-control-label" for="debit">Debit card</label>
                 </div>
               </div>
+
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="cc-name">Name on card</label>
@@ -183,7 +119,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')check('0','',$_POST['email'],'','',$_POS
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="cc-number">Credit card number</label>
-                  <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                  <input type="text" class="form-control" id="cardno" name = "cardno" placeholder="" required>
                   <div class="invalid-feedback">
                     Credit card number is required
                   </div>
