@@ -1,12 +1,13 @@
 <?php
+session_start();
+    require '..\view\loginform.php';   
+    require '..\model\connection.php';
+    require '..\control\control.php';
 
-require 'loginform.php';
-// require '\Ebookshop\control\control.php';
-// require '\Ebookshop\model\connection.php';
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        datastore1($_POST['email'],$_POST['password']);}
 
-//if($_SERVER['REQUEST_METHOD'] == 'POST')datastore(0, $_POST['email'] ,0 ,0 ,'' , $_POST['password']);
-
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,8 +33,8 @@ require 'loginform.php';
 <body class="grey lighten-3">
     <!-- header -->
     <?php
-  include 'header.php';
-  ?>
+  /*   include 'header.php'; */
+    ?>
     <!-- /header -->
     <!--Main layout-->
     <main class="mt-5 pt-4">
