@@ -1,15 +1,14 @@
 <?php
-session_start();
+$email = $emailerr = "";
 $firstname = $firstnamerr = "";
 $lastname = $lastnamerr = "";
-$userid = $useriderr = "";
 $username = $usernameerr = "";
-$email = $emailerr = "";
+$password = $passworderr = "";
 $gsm = $gsmerr = "";
 $cardno = $cardnoerr = "";
+$nameoncard = $nameoncarderr="";
 $address = $addresserr = "";
-$password = $passworderr = "";
-$cvv = $cvver = "";
+
 /*email*/
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -18,10 +17,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         $_SESSION["email"] = test_input($_POST["email"]);
     }
-    $email = test_input($_POST["email"]);
+/*         $email = test_input($_POST["email"]);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
             $emailerr = '<div class="alert alert-danger" role="alert">*required</div>';
-        }
+        } */
 /*end email*/
 
 
@@ -70,14 +69,14 @@ if(empty($_POST["cardno"])){
 
 /*end cardno*/
 
-/*cvv*/
-if(empty($_POST["cvv"])){
-    $cvverr = '<div class="alert alert-danger" role="alert">*required</div>';
+/* nameoncard */
+if(empty($_POST["nameoncard"])){
+    $nameoncard = '<div class="alert alert-danger" role="alert">*required</div>';
     } else{
-    $_SESSION["cvv"] = test_input($_POST["cvv"]);
+    $_SESSION["nameoncard"] = test_input($_POST["nameoncard"]);
     }
 
-/*end cvv*/
+/* end nameoncard */
 
 /*password*/
         if(empty($_POST["password"])){
@@ -87,8 +86,6 @@ if(empty($_POST["cvv"])){
         }
     }
 /*end password*/
-
-
 
     function test_input($data){
         $data = trim($data);
