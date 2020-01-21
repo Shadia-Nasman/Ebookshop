@@ -7,8 +7,8 @@ error_reporting(E_ALL);
 ?>
 
 
-<?php require '..\model\connection.php' ;
-require '..\control\control.php';
+<?php require '../model/connection.php' ;
+require '../control/control.php';
 
 ?>
 
@@ -306,7 +306,7 @@ require '..\control\control.php';
           ?>
         
 
-        <script src="../js/addcart.js"></script> -->
+        <script src="../js/addcart.js"></script> 
     
 
 

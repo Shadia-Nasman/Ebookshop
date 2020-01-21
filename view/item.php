@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,7 +71,7 @@
                         
                         <form class="d-flex justify-content-left">
                             <!-- Default input -->
-                                <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+                                <button id="itembtn" class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
                                 <i class="fas fa-shopping-cart ml-1"></i>
                             </button>
                             
@@ -89,6 +91,7 @@
 
 
             <script src="../js/showbook.js"></script>
+            <script src="../js/itembtn.js"></script> 
 
             </center>
     </main>

@@ -1,3 +1,6 @@
+<?php session_start(); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -103,41 +106,20 @@
                 <tr>
                   <th scope="row" class="border-0">
                     <div class="p-2">
-                      <img src="xxxx" alt="" width="70" class="img-fluid rounded shadow-sm">
+                      <img id="bkimg" src="xxxx" alt="" width="70" class="img-fluid rounded shadow-sm">
                       <div class="ml-3 d-inline-block align-middle">
-                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Book 1</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: xxx</span>
+                        <h5 class="mb-0"> <a href="#" id="bktitle" class="text-dark d-inline-block align-middle">Book 1</a></h5><span id="bktype" class="text-muted font-weight-normal font-italic d-block">Category: xxx</span>
                       </div>
                     </div>
                   </th>
-                  <td class="border-0 align-middle"><strong>€79.00</strong></td>
+                  <td id="bkprice" class="border-0 align-middle"><strong>€79.00</strong></td> 
+                  
                   <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
                 </tr>
-                <tr>
-                  <th scope="row">
-                    <div class="p-2">
-                      <img src="xxxx" alt="" width="70" class="img-fluid rounded shadow-sm">
-                      <div class="ml-3 d-inline-block align-middle">
-                        <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Book 2</a></h5><span class="text-muted font-weight-normal font-italic">Category: XXXXX</span>
-                      </div>
-                    </div>
-                  </th>
-                  <td class="align-middle"><strong>€79.00</strong></td>
-                  <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    <div class="p-2">
-                      <img src="xxxx.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
-                      <div class="ml-3 d-inline-block align-middle">
-                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Book 3</a></h5><span class="text-muted font-weight-normal font-italic">Category: xxx</span>
-                      </div>
-                    </div>
-                    <td class="align-middle"><strong>€79.00</strong></td>
-                    <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
-                    </td>
-                </tr>
+               
               </tbody>
+
+              <script src="../js/added.js"></script> 
             </table>
           </div>
           <!-- Shopping cart table -->
@@ -159,9 +141,9 @@
       </div>
 </div>
 
-
  <!--Footer-->
-<?php include 'footer.php';?>
+ 
+ <?php include 'footer.php';?>
   <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -177,6 +159,10 @@
     new WOW().init();
 
   </script>
+
+
+
+
 </body>
 
 </html>
