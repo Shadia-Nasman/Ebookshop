@@ -9,20 +9,22 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <!-- Bootstrap core CSS -->
-    <link href="items.css" rel="stylesheet">
+    <!-- <link href="items.css" rel="stylesheet"> -->
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.min.css" rel="stylesheet">
 </head>
 
-<body>
 
     <!-- Navbar -->
     <!-- End Navbar -->
 
     <!--Main layout-->
     <main class="mt-5 pt-4">
+    <center>
+    
+
         <div class="container dark-grey-text mt-5">
 
             <!--Grid row-->
@@ -30,9 +32,10 @@
 
                 <!--Grid column-->
                 <div class="col-md-6 mb-4">
-
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg"
+               
+                    <img  id="imgitem" src=""
                         class="img-fluid" alt="">
+
 
                 </div>
                 <!--Grid column-->
@@ -43,39 +46,33 @@
                     <!--Content-->
                     <div class="p-4">
 
-                        <div class="mb-3">
-                            <a href="">
-                                <span class="badge purple mr-1">Category 2</span>
-                            </a>
-                            <a href="">
-                                <span class="badge blue mr-1">New</span>
-                            </a>
-                            <a href="">
-                                <span class="badge red mr-1">Bestseller</span>
-                            </a>
-                        </div>
-
+                       
                         <p class="lead">
-                            <span class="mr-1">
-                                <del>$200</del>
-                            </span>
-                            <span>$100</span>
+                                    <div id="price">$100</div>
                         </p>
 
-                        <p class="lead font-weight-bold">Description</p>
+                        <div class="mb-3">
+                            
+                            <span class="badge purple mr-1" id ="bookname">book name</span><br>
+                      
+                       
+                            <span class="badge blue mr-1" id="booktype">book type</span><br>
+                      
+                     
+                            <span class="badge red mr-1" id="publishyear">publishyear</span><br>
+                     
+                    </div>
 
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit libero eos atque
-                            quia ipsa
-                            sint voluptatibus!
-                            Beatae sit assumenda asperiores iure at maxime atque repellendus maiores quia sapiente.</p>
 
+                        <p class="lead font-weight-bold" id="author">author</p>
+
+                        
                         <form class="d-flex justify-content-left">
                             <!-- Default input -->
-                            <input type="number" value="1" aria-label="Search" class="form-control"
-                                style="width: 100px">
-                            <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+                                <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
                                 <i class="fas fa-shopping-cart ml-1"></i>
                             </button>
+                            
 
                         </form>
 
@@ -91,12 +88,13 @@
 
 
 
+            <script src="../js/showbook.js"></script>
 
-
-
+            </center>
     </main>
     <!--Main layout-->
     <!--Footer-->
+
     <footer class="page-footer text-center font-small mt-4 wow fadeIn">
 
         <hr class="my-4">
@@ -140,6 +138,7 @@
     // Animations initialization
     new WOW().init();
     </script>
+   
 </body>
 
 </html>

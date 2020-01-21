@@ -1,7 +1,17 @@
-<?php require '../model/connection.php' ;
-require '../control/control.php';
 
-?> 
+
+<?php
+ini_set('display_errors', "1");
+ini_set('display_startup_errors', "1");
+error_reporting(E_ALL);
+?>
+
+
+<?php require '..\model\connection.php' ;
+require '..\control\control.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -91,7 +101,7 @@ require '../control/control.php';
 
       <!--First slide-->
       <div class="carousel-item active">
-        <div class="view" style="background-image: url('/img/slide1.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div class="view" style="background-image: url('..\img\slide1.jpg'); background-repeat: no-repeat; background-size: cover;">
 
           <!-- Mask & flexbox options-->
           <div class="mask rgba-stylish-strong d-flex justify-content-center align-items-center">
@@ -119,7 +129,7 @@ require '../control/control.php';
 
       <!--Second slide-->
       <div class="carousel-item">
-        <div class="view" style="background-image: url('img/slide.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div class="view" style="background-image: url('..\img\slide1.jpg'); background-repeat: no-repeat; background-size: cover;">
 
           <!-- Mask & flexbox options-->
           <div class="mask rgba-stylish-strong d-flex justify-content-center align-items-center">
@@ -147,7 +157,7 @@ require '../control/control.php';
 
       <!--Third slide-->
       <div class="carousel-item">
-        <div class="view" style="background-image: url('img/slide4.jfif'); background-repeat: no-repeat; background-size: cover;">
+        <div class="view" style="background-image: url('..\img\slide1.jpg'); background-repeat: no-repeat; background-size: cover;">
 
           <!-- Mask & flexbox options-->
           <div class="mask rgba-stylish-strong d-flex justify-content-center align-items-center">
@@ -233,13 +243,15 @@ require '../control/control.php';
       <section class="text-center mb-4">
 
         <!--Grid row-->
-        <div  class="row wow fadeIn">
+        <div  class="row wow fadeIn"  id="buttons">
         
         <?php 
-        $rows = displayProducts();
+
+      $rows= displayProducts();
+        
         foreach ($rows as $row):?>
           <!--Grid column-->
-          <div  class="col-lg-3 col-md-6 mb-4">
+          <div  class="col-lg-3 col-md-6 mb-4" >
 
             <!--Card-->
             <div  class="card" >
@@ -255,7 +267,7 @@ require '../control/control.php';
               <!--Card image-->
 
               <!--Card content-->
-              <div class="card-body text-center">
+              <div class="card-body text-center" >
                 <!--Category & Title-->
                 <a href="" class="grey-text">
                   <h5 name="booktitle"><?php echo $row['title']?></h5>
@@ -271,11 +283,14 @@ require '../control/control.php';
                 <h4 class="font-weight-bold blue-text">
                   <strong><?php echo $row['price']?>€</strong>
                 </h4>
-
-                <form method="post" action=""> 
-                <input type="submit" name="addbtn"
-                class="button" value="show details"  /> 
-                </form> 
+                
+                <form method="post"   > 
+               
+                <input  type="button" name="showbtn" id="<?= $row['bookid'] ?>" 
+                class="button"  value="Show Book" >
+              
+ 
+              
  </head> 
               </div>
               <!--Card content-->
@@ -287,9 +302,13 @@ require '../control/control.php';
           <!--Grid column-->
           
          <?php
-          endforeach;
+           endforeach;
           ?>
-       
+        
+
+        <script src="../js/addcart.js"></script> -->
+    
+
 
         </div>
         <!--Grid row-->
@@ -302,7 +321,7 @@ require '../control/control.php';
     
 
     </div>
-    
+    <div id="test"> </div>
   </main>
   <!--Main layout-->
 <!--Footer-->
