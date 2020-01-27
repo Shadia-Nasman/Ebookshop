@@ -10,7 +10,7 @@ Tabita (product  index  )<br>
 Jennis (checkout  contact )<br>
 
 backend:<br>
-Moumia (login.php  register.php  checkout.php)<br>
+Moumita (login.php  register.php  checkout.php)<br>
 Shadia (product.php  item.php cart.php)<br>
 Welid (login.php register.php :validations)<br>
 
