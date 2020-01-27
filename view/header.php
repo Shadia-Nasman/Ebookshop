@@ -23,17 +23,12 @@
         <!-- Left -->
         <ul class="navbar-nav mr-auto ml-3">
           <li class="nav-item active">
-            <a class="nav-link waves-effect" href="#">Home
+            <a class="nav-link waves-effect" href="index.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="products.php">Book store</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="checkout.php">Checkout</a>
-          </li>
-          <li class="nav-item">
+          
+                  <li class="nav-item">
             <a class="nav-link waves-effect" href="contact.php">Contact</a>
           </li>
         </ul>

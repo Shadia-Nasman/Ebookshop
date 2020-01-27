@@ -68,16 +68,16 @@
 
                         <p class="lead font-weight-bold" id="author">author</p>
 
-                        
+                        <div id="itembtn">
                         <form class="d-flex justify-content-left">
                             <!-- Default input -->
-                                <button id="itembtn" class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+                                <button id="itembt" class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
                                 <i class="fas fa-shopping-cart ml-1"></i>
                             </button>
                             
 
                         </form>
-
+                        </div>
                     </div>
                     <!--Content-->
 

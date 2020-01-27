@@ -1,3 +1,16 @@
+
+<?php
+session_start();
+
+
+    require '..\model\connection.php';
+    require '..\control\control.php';
+  
+  
+if($_SERVER['REQUEST_METHOD'] == 'POST')datastore($_POST['email'],'','' ,'','','',$_POST['cardno'],$_POST['nameoncard'],$_POST['address']);    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +50,7 @@
 
 <!-- header -->
 <?php
-  include 'header.php';
+  /* include 'header.php'; */
   ?>
 <!-- /header -->
 
@@ -57,9 +70,8 @@
 
           <!--Card-->
           <div class="card">
-
             <!--Card content-->
-            <form class="card-body">
+            <form class="card-body" method = "POST">
 
               <!--Grid row-->
               <div class="row">
@@ -67,98 +79,23 @@
                 <!--Grid column-->
                 <div class="col-md-6 mb-2">
 
-                  <!--firstName-->
-                  <div class="md-form ">
-                    <input type="text" id="firstName" class="form-control">
-                    <label for="firstName" class="">First name</label>
-                  </div>
 
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-md-6 mb-2">
-
-                  <!--lastName-->
-                  <div class="md-form">
-                    <input type="text" id="lastName" class="form-control">
-                    <label for="lastName" class="">Last name</label>
-                  </div>
-
-                </div>
-                <!--Grid column-->
-
-              </div>
-              <!--Grid row-->
-
-              <!--Username-->
-              <div class="md-form input-group pl-0 mb-5">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">@</span>
-                </div>
-                <input type="text" class="form-control py-0" placeholder="Username" aria-describedby="basic-addon1">
-              </div>
 
               <!--email-->
               <div class="md-form mb-5">
-                <input type="text" id="email" class="form-control" placeholder="youremail@example.com">
+                <input type="text" id="email" name ="email" class="form-control" placeholder="youremail@example.com">
                 <label for="email" class="">Email (optional)</label>
+                <?php if(!empty($_SESSION["emailerr"])) {echo $_SESSION["emailerr"];}?></span>
               </div>
-
+              
               <!--address-->
               <div class="md-form mb-5">
-                <input type="text" id="address" class="form-control" placeholder="1234 Main St">
-                <label for="address" class="">Address</label>
+                <input type="text" id="address"
+                  name = "address" class="form-control" placeholder="1234 Main St">
+                <label for="address" class=""> Address</label>
+                <?php if(!empty($_SESSION["addresserr"])) {echo $_SESSION["addresserr"];}?></span>
               </div>
 
-              <!--address-2-->
-              <div class="md-form mb-5">
-                <input type="text" id="address-2" class="form-control" placeholder="Apartment or suite">
-                <label for="address-2" class="">Address 2 (optional)</label>
-              </div>
-
-              <!--Grid row-->
-              <div class="row">
-
-                <!--Grid column-->
-                <div class="col-lg-4 col-md-12 mb-4">
-
-
-
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-4 col-md-6 mb-4">
-
-
-
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-4 col-md-6 mb-4">
-
-
-
-                </div>
-                <!--Grid column-->
-
-              </div>
-              <!--Grid row-->
-
-              <hr>
-
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="same-address">
-                <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-              </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="save-info">
-                <label class="custom-control-label" for="save-info">Save this information for next time</label>
-              </div>
-
-              <hr>
 
               <div class="d-block my-3">
                 <div class="custom-control custom-radio">
@@ -170,10 +107,11 @@
                   <label class="custom-control-label" for="debit">Debit card</label>
                 </div>
               </div>
+
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="cc-name">Name on card</label>
-                  <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                  <input type="text" class="form-control" id="nameoncard" name = "nameoncard" placeholder="" required>
                   <small class="text-muted">Full name as displayed on card</small>
                   <div class="invalid-feedback">
                     Name on card is required
@@ -181,14 +119,21 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="cc-number">Credit card number</label>
-                  <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                  <input type="text" class="form-control" id="cardno" name = "cardno" placeholder="" required>
                   <div class="invalid-feedback">
                     Credit card number is required
                   </div>
                 </div>
               </div>
-<button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+<button id="paybtn" class="btn btn-primary btn-lg btn-block" type="submit">Continue to pay</button>
             </form>
+            <script>paybtn.addEventListener("click",event => {
+    event.preventDefault();
+    window.alert("Thank you");
+    window.location.href = "index.php";
+
+});
+ </script>
 
           </div>
           <!--/.Card-->

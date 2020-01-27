@@ -49,33 +49,7 @@
         
           }
 
-      // for checkout //
-
-        function check($orderid,$bookid,$email,$price,$totalprice,$shippingaddress,$bookcount){
-        $db = openConnection();
-              $select = $db->query("INSERT INTO
-            `order`  (
-                orderid,
-                bookid,
-                email,
-                price,
-                totalprice,
-                shippingaddress,
-                bookcount
-              )
-      VALUES 
-        (
-            '$orderid',
-            '$bookid',
-            '$email' 
-            '$price',
-            '$totalprice',
-            '$shippingaddress',
-            '$bookcount'
-          )
-      "  );
-        }
-
+     
  // products.php functions -->
 
 function displayProducts(){
@@ -85,4 +59,32 @@ $data=$db->query($select);
 return $data;
 }
     // products.php functions
+
+
+     // for checkout //
+
+     function check($orderid,$bookid,$email,$price,$totalprice,$shippingaddress,$bookcount){
+      $db = openConnection();
+            $select = $db->query("INSERT INTO
+          `order`  (
+              orderid,
+              bookid,
+              email,
+              price,
+              totalprice,
+              shippingaddress,
+              bookcount
+            )
+    VALUES 
+      (
+          '$orderid',
+          '$bookid',
+          '$email' 
+          '$price',
+          '$totalprice',
+          '$shippingaddress',
+          '$bookcount'
+        )
+    "  );
+      }
 

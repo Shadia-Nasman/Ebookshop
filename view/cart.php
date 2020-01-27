@@ -102,8 +102,8 @@
                   </th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
+              <tbody >
+                <tr id="cartrow">
                   <th scope="row" class="border-0">
                     <div class="p-2">
                       <img id="bkimg" src="xxxx" alt="" width="70" class="img-fluid rounded shadow-sm">
@@ -116,6 +116,7 @@
                   
                   <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
                 </tr>
+                <tr id="target"></tr>
                
               </tbody>
 
@@ -133,9 +134,24 @@
            
             <ul class="list-unstyled mb-4">
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                <h5 class="font-weight-bold">€400.00</h5>
+                <h5 class="font-weight-bold">€00.00</h5>
               </li>
-            </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</a>
+              <form class="d-flex justify-content-left">
+                            <!-- Default input -->
+                                <button id="checkbtn" class="btn btn-primary btn-md my-0 p" type="submit" >buy now
+                              
+                            </button>
+                            
+
+                        </form>
+                        <script>checkbtn.addEventListener("click",event => {
+    event.preventDefault();
+   
+    window.location.href = "checkout.php";
+
+});
+ </script>
+            
           </div>
         </div>
       </div>

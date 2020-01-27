@@ -1,3 +1,4 @@
+// var booksarray= [];
 buttons.addEventListener('click', event => {
     event.preventDefault();
     console.log(event.target.id);
@@ -9,7 +10,7 @@ buttons.addEventListener('click', event => {
         var jsonresponse = await respons.json();
         console.log(jsonresponse);
 
-
+        // booksarray.push(jsonresponse);
 
         sessionStorage.setItem("jsonresponse", JSON.stringify(jsonresponse));
         window.location.href = "item.php";
