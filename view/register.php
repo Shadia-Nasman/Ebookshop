@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require 'registratieform.php';
 
 // require '\Ebookshop\model\connection.php';
